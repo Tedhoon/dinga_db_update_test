@@ -9,19 +9,7 @@ def comparemachine(request):
     for data in publicdata:
         data.pb_update_check = "False"
         data.save()
-        # print(data.pb_update_check)
 
-    # for i in publicdata:
-    #     print("id : " + i.id +"         "+ "pb_name : " + i.pb_name)
-    # print("----------------------------------------------")    
-    # for i in publicupdate:
-    #     print("id : " + i.id +"         "+ "pb_name : " + i.pb_name)
-
-    # for data in publicdata:
-    #     for update in publicupdate:
-    #         print("data_id : " + data.id +"         "+ "pb_name : " + data.pb_name)
-    #         print("update_id : " + update.id +"         "+ "pb_name : " + update.pb_name)
-    
     for update in publicupdate:
         for data in publicdata:
             if data.id == update.id:
