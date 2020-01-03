@@ -36,6 +36,8 @@ class PublicData(models.Model):
     pb_dinga_agerange = models.TextField(null=True, blank=True)
     pb_dinga_type = models.TextField(null=True, blank=True)
 
+    pb_update_check = models.BooleanField(default="False")
+
 
 
 class PublicUpdate(models.Model):
@@ -67,3 +69,5 @@ class PublicUpdate(models.Model):
     pb_manage_department_detail_part = models.TextField(blank=True)
     pb_target_type = models.TextField(blank=True)
     pb_support_cate = models.TextField(blank=True)
+
+    
