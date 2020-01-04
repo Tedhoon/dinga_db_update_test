@@ -5,6 +5,7 @@ def comparemachine(request):
     publicdata = PublicData.objects.all().order_by("id")
     publicupdate = PublicUpdate.objects.all().order_by("id")
 
+
     #처음에 update check를 false로 초기화시킵니당
     for data in publicdata:
         data.pb_update_check = "False"
