@@ -18,5 +18,5 @@ from django.urls import path
 from public.views import comparemachine 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', comparemachine, name =''),
+    path('gogo/', comparemachine, name =''),
 ]

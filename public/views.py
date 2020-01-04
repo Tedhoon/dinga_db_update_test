@@ -41,11 +41,12 @@ def comparemachine(request):
                 pb_support_cate=update.pb_support_cate,
                 pb_support_type=update.pb_support_type,
                 pb_disclosuer=update.pb_disclosuer,
+                pb_dinga_agerange=update.pb_dinga_agerange,
+                pb_dinga_type=update.pb_dinga_type,
                 pb_update_check="True")
                 new_data.save()
                 break
             elif data.id != update.id:
-                # 이 부분에서 case나누어서 pass, 추가를 넣어야함. 이건 내일 !
                 # 다른 경우 지우거나 업데이트인데. 일단 업데이트 시켜놓아도 중복데이터가 계속 들어가지 않아서 괜찮다.
                 print(update.id + "의 id를 가진 정책이 업데이트 됩니다.")
                 new_data = PublicData(id=update.id,
@@ -74,11 +75,13 @@ def comparemachine(request):
                 pb_support_cate=update.pb_support_cate,
                 pb_support_type=update.pb_support_type,
                 pb_disclosuer=update.pb_disclosuer,
+                pb_dinga_agerange=update.pb_dinga_agerange,
+                pb_dinga_type=update.pb_dinga_type,
                 pb_update_check="True")
                 new_data.save()
                 break
       
-        publicdata_absent = publicdata.filter(pb_update_check = "False")
-        publicdata_absent.delete()   
-        # 이렇게 진행하면 on_delete=CASCADE도 먹을 것
+    publicdata_absent = publicdata.filter(pb_update_check = "False")
+    publicdata_absent.delete()   
+    # 이렇게 진행하면 on_delete=CASCADE도 작용
     pass

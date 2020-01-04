@@ -69,5 +69,15 @@ class PublicUpdate(models.Model):
     pb_manage_department_detail_part = models.TextField(blank=True)
     pb_target_type = models.TextField(blank=True)
     pb_support_cate = models.TextField(blank=True)
+    #밑의 컬럼은 import시 없애고 시작해야함
+    pb_dinga_agerange = models.TextField(null=True, blank=True)
+    pb_dinga_type = models.TextField(null=True, blank=True)
+
 
     
+
+
+class CascadeTest(models.Model):
+    nickname = models.CharField('닉네임',max_length=40)
+    belong_public = models.ForeignKey(PublicData,related_name="public_qna", null = True,on_delete=models.CASCADE)
+
