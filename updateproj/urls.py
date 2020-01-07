@@ -15,8 +15,9 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
-from public.views import comparemachine 
+from public.views import comparemachine ,deletemachine
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('gogo/', comparemachine, name =''),
+    path('gogo/', comparemachine, name ='comparemachine'),
+    path('중복지우기/', deletemachine, name ='deletemachine'),
 ]
